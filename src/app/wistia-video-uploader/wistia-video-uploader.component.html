@@ -1,3 +1,19 @@
-<p>
-  wistia-video-uploader works!
-</p>
+<div class="component-wrapper">
+  <div class="wistia-video-uploader-wrapper">
+    <div>
+      <div class="upload-button-image">
+        <input type="file" multiple="multiple">
+      </div>
+      <h3 class="upload-prompt-title">
+        Click on the upload icon to begin uploading.
+      </h3>
+    </div>
+  </div>
+  <div *ngIf="isVideoUploaded && uploadedVideoUrl" class="video-player-wrapper">
+    <iframe [src]="uploadedVideoUrl | trustedUrl"
+            allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed"
+            name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen
+            oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
+    <script src="//fast.wistia.net/assets/external/iframe-api-v1.js"></script>
+  </div>
+</div>

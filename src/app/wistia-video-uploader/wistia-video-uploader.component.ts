@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wistia-video-uploader.component.scss']
 })
 export class WistiaVideoUploaderComponent implements OnInit {
+  uploadedVideoUrl: string;
+  isVideoUploaded: boolean;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.isVideoUploaded = false;
+    this.uploadedVideoUrl = '//fast.wistia.net/embed/iframe/djyx0apfhv?videoFoam=true';
   }
 
 }

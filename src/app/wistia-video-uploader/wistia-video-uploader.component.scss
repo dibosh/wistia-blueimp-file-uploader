@@ -1,0 +1,46 @@
+$color-border: #d6d6d6;
+$color-alter-text: #aaaaaa;
+$color-primary-action: #1e7bed;
+
+.component-wrapper {
+  width: 640px;
+  heigth: 360px;
+  font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+  .wistia-video-uploader-wrapper {
+    border: $color-border dashed 2px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 50px 0;
+
+    .upload-button-image {
+      background-image: url(../../assets/images/upload-image.png);
+      background-size: 128px 128px;
+      width: 128px;
+      height: 128px;
+      margin: 0 auto;
+      position: relative;
+      cursor: pointer;
+
+      input[type='file'] {
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .upload-prompt-title {
+      color: $color-alter-text;
+      font-weight: 400;
+      margin: 16px 0 0 0;
+    }
+  }
+
+  .video-player-wrapper {
+    height: 100%;
+  }
+}
