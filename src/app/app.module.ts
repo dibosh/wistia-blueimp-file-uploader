@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { WistiaVideoUploaderComponent } from './wistia-video-uploader/wistia-video-uploader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WistiaVideoUploaderComponent
   ],
   imports: [
     BrowserModule,
