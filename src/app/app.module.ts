@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WistiaVideoUploaderComponent } from './wistia-video-uploader/wistia-video-uploader.component';
+import { TrustedUrlPipe } from './trusted-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WistiaVideoUploaderComponent
+    WistiaVideoUploaderComponent,
+    TrustedUrlPipe
   ],
   imports: [
     BrowserModule,
