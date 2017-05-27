@@ -10,7 +10,7 @@
           </label>
         </form>
       </div>
-      <div class="progress" *ngIf="isUploadingVideo && videoUploadProgress">
+      <div class="progress" *ngIf="isUploadingVideo">
         <div class="bar" [style.width]="getUploadProgress() + '%'"></div>
       </div>
     </div>
