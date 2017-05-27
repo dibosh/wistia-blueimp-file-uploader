@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 declare var $: any;
 
@@ -9,21 +9,24 @@ declare var $: any;
 })
 export class WistiaVideoUploaderComponent implements AfterViewInit {
   @ViewChild('wistiavuploader') element:ElementRef;
+  @Input() apiSecret: string;
   uploadedVideoUrl: string;
   isVideoUploaded: boolean;
   isUploadingVideo: boolean;
   videoUploadProgress: number;
-  apiSecret: string;
+  _defaultAPISecret: string;
 
   constructor() {
+    this._defaultAPISecret = '3b2f5f1795b5026114d535eff37b8eef7d5d9fdef6966ee1ae7ec702846d0b14';
     this.isVideoUploaded = false;
-    this.apiSecret = '3b2f5f1795b5026114d535eff37b8eef7d5d9fdef6966ee1ae7ec702846d0b14';
     this.isUploadingVideo = false;
     this.videoUploadProgress = 0;
   }
 
   ngAfterViewInit() {
     let self = this;
+    self.apiSecret = self.apiSecret || self._defaultAPISecret;
+
     function _onUploadCallback(e, data) {
       data.formData = {
         api_password: self.apiSecret
