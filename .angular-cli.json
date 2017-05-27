@@ -21,7 +21,12 @@
       "styles": [
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../src/vendor/blueimp/ui.widget/jquery.ui.widget.js",
+        "../src/vendor/blueimp/jquery.iframe-transport.js",
+        "../src/vendor/blueimp/jquery.file.upload.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
