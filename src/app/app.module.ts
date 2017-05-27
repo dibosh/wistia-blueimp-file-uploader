@@ -10,8 +10,8 @@ import { TrustedUrlPipe } from './trusted-url.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    WistiaVideoUploaderComponent,
-    TrustedUrlPipe
+    TrustedUrlPipe,
+    WistiaVideoUploaderComponent
   ],
   imports: [
     BrowserModule,
