@@ -8,12 +8,13 @@ $color-yellow: #FFC408;
   width: 640px;
   height: 360px;
   font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  border: $color-border dashed 2px;
+
 
   .wistia-video-uploader-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: $color-border dashed 2px;
     border-radius: 3px;
     width: 100%;
     height: 100%;
