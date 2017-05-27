@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 declare var $: any;
 
@@ -8,6 +8,7 @@ declare var $: any;
   styleUrls: ['./wistia-video-uploader.component.scss']
 })
 export class WistiaVideoUploaderComponent implements AfterViewInit {
+  @ViewChild('wistiavuploader') element:ElementRef;
   uploadedVideoUrl: string;
   isVideoUploaded: boolean;
   isUploadingVideo: boolean;
@@ -41,12 +42,14 @@ export class WistiaVideoUploaderComponent implements AfterViewInit {
       self.uploadedVideoUrl = self.getUploadedVideoUrl(data.result.hashed_id);
     }
 
-    $('#file-upload').fileupload({
-      url: 'https://upload.wistia.com',
-      add: _onUploadCallback,
-      progressall: _onProgressCallback,
-      done: _onCompleteCallback
-    });
+    $(this.element.nativeElement)
+      .find('#file-upload')
+      .fileupload({
+        url: 'https://upload.wistia.com',
+        add: _onUploadCallback,
+        progressall: _onProgressCallback,
+        done: _onCompleteCallback
+      });
   }
 
   getUploadProgress() {
