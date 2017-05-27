@@ -1,12 +1,18 @@
 <div class="component-wrapper">
-  <div class="wistia-video-uploader-wrapper">
+  <div class="wistia-video-uploader-wrapper" *ngIf="!isVideoUploaded && !uploadedVideoUrl">
     <div>
-      <div class="upload-button-image">
-        <input type="file" multiple="multiple">
+      <div class="upload-button-wrapper" *ngIf="!isUploadingVideo">
+        <form id="file-form">
+          <input id="file-upload" type="file">
+          <label for="file-upload" class="upload-button">
+            Choose file to Upload
+            <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+          </label>
+        </form>
       </div>
-      <h3 class="upload-prompt-title">
-        Click on the upload icon to begin uploading.
-      </h3>
+      <div class="progress" *ngIf="isUploadingVideo && videoUploadProgress">
+        <div class="bar" [style.width]="getUploadProgress() + '%'"></div>
+      </div>
     </div>
   </div>
   <div *ngIf="isVideoUploaded && uploadedVideoUrl" class="video-player-wrapper">

@@ -1,35 +1,74 @@
 $color-border: #d6d6d6;
 $color-alter-text: #aaaaaa;
-$color-primary-action: #1e7bed;
+$color-primary-action: #167EFB;
+$color-green: #66AA3E;
+$color-yellow: #FFC408;
 
 .component-wrapper {
   width: 640px;
-  heigth: 360px;
+  height: 360px;
   font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 
   .wistia-video-uploader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: $color-border dashed 2px;
     border-radius: 3px;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     text-align: center;
     padding: 50px 0;
 
-    .upload-button-image {
-      background-image: url(../../assets/images/upload-image.png);
-      background-size: 128px 128px;
-      width: 128px;
-      height: 128px;
+    .progress {
+      width: 500px;
+      border-radius: 5px;
+      height: 20px;
       margin: 0 auto;
-      position: relative;
-      cursor: pointer;
+      overflow: hidden;
+      background: lighten($color-border, 5%);
 
-      input[type='file'] {
-        position: absolute;
-        opacity: 0;
-        left: 0;
-        top: 0;
+      .bar {
+        height: 100%;
+        background: $color-green;
+      }
+    }
+
+    .upload-button-wrapper {
+      width: 256px;
+      margin: 0 auto;
+
+      #file-form {
+        position: relative;
         width: 100%;
         height: 100%;
+      }
+
+      #file-upload {
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.1px;
+        height: 0.1px;
+      }
+
+      .upload-button {
+        font-size: 14px;
+        font-weight: 400;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        color: white;
+        background-color: $color-primary-action;
+        display: inline-block;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover {
+          background: darken($color-primary-action, 10%);
+        }
       }
     }
 
@@ -41,6 +80,8 @@ $color-primary-action: #1e7bed;
   }
 
   .video-player-wrapper {
+    width: 100%;
     height: 100%;
   }
+
 }
